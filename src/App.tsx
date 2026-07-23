@@ -1,13 +1,11 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import Spline from '@splinetool/react-spline';
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
-  useInView,
   useMotionValue,
-  AnimatePresence,
 } from "framer-motion";
 
 /* ── Google Font: Playfair Display (serif condensed display) + DM Sans ── */
@@ -85,7 +83,7 @@ const Cursor = () => {
 /* ── Navbar ── */
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", h);
@@ -157,17 +155,12 @@ const Hero = () => {
   const rotateY  = useTransform(sMouseX, [-1, 1], [-18, 18]);
   const rotateX  = useTransform(sMouseY, [-1, 1], [12, -12]);
 
-  // Specular highlight position
-  const hlX = useTransform(sMouseX, [-1, 1], [20, 80]);   // % across
-  const hlY = useTransform(sMouseY, [-1, 1], [20, 80]);
-
   // Ambient shadow shift
   const shadowX = useTransform(sMouseX, [-1, 1], [-30, 30]);
   const shadowY = useTransform(sMouseY, [-1, 1], [-20, 20]);
 
   // Subtle parallax on the text layers behind avatar
   const textPX  = useTransform(sMouseX, [-1, 1], [-12, 12]);
-  const textPY  = useTransform(sMouseY, [-1, 1], [-6, 6]);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -472,7 +465,7 @@ interface Project {
   images: string[];
 }
 
-const ProjectCard: React.FC<{ project: Project; index: number; total: number }> = ({ project, index, total }) => {
+const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   // Ogni card si "appiccica" a un top diverso così le card si accumulano visivamente
@@ -623,7 +616,7 @@ const Work = () => (
      */}
     <div style={{ paddingBottom: `${projects.length * 60}px` }}>
       {projects.map((p, i) => (
-        <ProjectCard key={i} project={p} index={i} total={projects.length} />
+        <ProjectCard key={i} project={p} index={i} />
       ))}
     </div>
   </section>
@@ -632,7 +625,6 @@ const Work = () => (
 /* ── About ── */
 const About = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     /*
