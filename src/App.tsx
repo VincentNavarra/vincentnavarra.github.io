@@ -423,21 +423,21 @@ const projects = [
   {
     num: "01", type: "CLIENT", title: "Pannone Rent & Assicurazioni", link: "https://www.pannone-rent-assicurazioni.it/",
     images: [
-      "/src/assets/projects/pannone-rent-assicurazioni.webp",
+      "./src/assets/projects/pannone-rent-assicurazioni.webp",
       "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1200&q=80",
     ],
   },
   {
     num: "02", type: "CLIENT", title: "Fulmine Intimo & Biancheria", link: "https://www.fulmineintimoebiancheria.it/",
     images: [
-      "/src/assets/projects/fulmine.webp",
+      "./src/assets/projects/fulmine.webp",
       "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200&q=80",
     ],
   },
   {
     num: "03", type: "CLIENT", title: "Matteo Di Giovanni Portfolio", link: "https://www.matteodigiov.com/",
     images: [
-      "/src/assets/projects/mdg.webp",
+      "./src/assets/projects/mdg.webp",
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80",
     ],
   },
