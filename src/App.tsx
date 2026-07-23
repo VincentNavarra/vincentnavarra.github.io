@@ -269,7 +269,7 @@ const Hero = () => {
         >
           {/* Avatar image */}
           <motion.img
-            src="/src/assets/avatar.png"
+            src="./src/assets/avatar.png"
             alt="Vincent Navarra"
             style={{
               width: "clamp(300px,40vw,580px)",
