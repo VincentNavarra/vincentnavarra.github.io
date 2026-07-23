@@ -7,6 +7,10 @@ import {
   useSpring,
   useMotionValue,
 } from "framer-motion";
+import avatar from "./assets/avatar.png";
+import img1 from "./assets/projects/pannone-rent-assicurazioni.webp";
+import img2 from "./assets/projects/fulmine.webp";
+import img3 from "./assets/projects/mdg.webp";
 
 /* ── Google Font: Playfair Display (serif condensed display) + DM Sans ── */
 const FontLoader = () => (
@@ -269,7 +273,7 @@ const Hero = () => {
         >
           {/* Avatar image */}
           <motion.img
-            src="./src/assets/avatar.png"
+            src={avatar}
             alt="Vincent Navarra"
             style={{
               width: "clamp(300px,40vw,580px)",
@@ -423,21 +427,21 @@ const projects = [
   {
     num: "01", type: "CLIENT", title: "Pannone Rent & Assicurazioni", link: "https://www.pannone-rent-assicurazioni.it/",
     images: [
-      "./src/assets/projects/pannone-rent-assicurazioni.webp",
+      img1,
       "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1200&q=80",
     ],
   },
   {
     num: "02", type: "CLIENT", title: "Fulmine Intimo & Biancheria", link: "https://www.fulmineintimoebiancheria.it/",
     images: [
-      "./src/assets/projects/fulmine.webp",
+      img2,
       "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200&q=80",
     ],
   },
   {
     num: "03", type: "CLIENT", title: "Matteo Di Giovanni Portfolio", link: "https://www.matteodigiov.com/",
     images: [
-      "./src/assets/projects/mdg.webp",
+      img3,
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80",
     ],
   },
