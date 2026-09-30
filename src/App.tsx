@@ -7,7 +7,7 @@ import {
   useSpring,
   useMotionValue,
 } from "framer-motion";
-import avatar from "./assets/avatar.png";
+import avatar from "./assets/avatar.webp";
 import img1 from "./assets/projects/pannone-rent-assicurazioni.webp";
 import img2 from "./assets/projects/fulmine.webp";
 import img3 from "./assets/projects/mdg.webp";
