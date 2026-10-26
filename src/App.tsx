@@ -25,7 +25,7 @@ import {
   Trophy,
   BookOpen,
 } from 'lucide-react';
-import { t, tr } from './i18n'
+import { t } from './i18n'
 import type { Lang } from './i18n'
 import { projects } from "./projects";
 import avatar from "./assets/avatar.webp";
