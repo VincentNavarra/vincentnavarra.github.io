@@ -1,3 +1,4 @@
+
 name: Deploy Vite site to GitHub Pages
 
 on:
@@ -31,6 +32,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Debug lucide-react
+        run: |
+          npm ls lucide-react
+          node -p "require('./node_modules/lucide-react/package.json').version"
+          ls -la node_modules/lucide-react/dist/esm/icons/circle-euro.mjs
+          ls -la node_modules/lucide-react/dist/esm/icons/scan-box.mjs
+          ls -la node_modules/lucide-react/dist/esm/icons/server-plus.mjs
+          ls -la node_modules/lucide-react/dist/esm/icons/shield-keyhole.mjs
+
       - name: Build
         run: npm run build
 
@@ -40,13 +50,11 @@ jobs:
           path: ./dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    needs: build
-
-    runs-on: ubuntu-latest
 
     steps:
       - name: Deploy to GitHub Pages
